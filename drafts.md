@@ -30,13 +30,28 @@ $margins: 2em 0.5em 3em 0.2em;
 
 
 3. **¿Qué es un SCSS Mixin? (porque crees que debes utilizarla pon un ejemplo de un mixin, escribiendo cómo se crea y como se pondría para utilizarla):**  
-Son bloques de código para optimizar en tiempo de desarrollo, aplicando estilos que pueden ser repetidos en distintas partes de la hoja de estilos final, haciendo solamente referencia al @mixin especificado.
+Son bloques de código para optimizar en tiempo de desarrollo, aplicando estilos que pueden ser repetidos en distintas partes de la hoja de estilos final, de manera más compleja que usando variables, con solo hacer referencia al @mixin especificado.
+```scss
+@mixin gridsWithSameAttr {
+  display: grid;
+  background-color: lime !default:
+}
 
-@mixin 
+.wrapperOne {
+  .wrapperOneSub {
+    @include gridsWithSameAttr;
+  }
+  .grid-template-rows: 1fr 2fr;
+}
 
-@include
-
-
-4. **¿Qué significa Unidad fraccionaria (fr) con CSS Grid?**:
-Las Fraction Units (fr), como unidades de medida, son una forma "universal" para asegurar que el contenido va a mostrarse de la misma forma en diferentes dispositivos/resoluciones.
-En CSS Grid aplica a las fraccione usadas para dimensionar las filas o columnas, unas respecto a las otras, según lo indiquemos.
+.wrapperTwo {
+  .wrapperTwoSub {
+    @include gridsWithSameAttr;
+  }
+  .grid-template-colums: 1fr 1fr 1fr;
+}
+```
+  
+4. **¿Qué significa Unidad fraccionaria (fr) con CSS Grid?**:  
+Las Fraction Units (fr), como unidades de medida, son una forma "universal" para asegurar que el contenido va a mostrarse de la misma forma en diferentes dispositivos/resoluciones.  
+En CSS Grid aplica a las fraccione usadas para dimensionar las filas o columnas, unas respecto a las otras, según lo indiquemos.  
