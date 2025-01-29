@@ -1,5 +1,3 @@
-Voy respondiendo las preguntas:  
-
 1. **¿Cuáles son algunas de las cosas que hacen que SCSS sea diferente de CSS? (coloca ejemplos):**  
 * SaSS es un lenguaje preprocesado (que compila) para desarrollar CSS de forma más eficiente. Al ser un lenguaje preprocesado, existen tiempos de compilación y tiempos de ejecución, permitiendo un proceso de depuración más rápido.  
 SaSS tiene varias evoluciones, hacia SCSS.
