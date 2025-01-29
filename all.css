@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    /* debug */
+    background-color: lightgray;
+}
+
+/* 01 */
+.containerGridOne {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* 02 */
+
+
+
