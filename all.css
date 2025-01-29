@@ -1,20 +1,20 @@
-h2 {
-    text-align: center;
-}
 .container {
     display: grid;
     max-width: 500px;
-    
+}
+h2 {
+    text-align: center;
 }
 
-
 /* 01 */
+
 .wrapperOne {
     grid-template-columns: 1fr 1fr;
 }
 
 /* 02 */
 .wrapperTwo {
+
     grid-template-columns: 1fr 1fr 2fr;
 }
 .whatever {
@@ -30,23 +30,21 @@ h2 {
 /* 03 */
 
 .gridThree {
-    grid-template-rows:  1fr 3fr;
-    max-width: 500px;
+    background-color: #838383;
+    height: 300px;
 }
 .gridThreeB img {
     object-fit: cover;
-    max-width: 500px;
+    max-height: 225px;
 }
 
 /* 04 */
 
 .gridFour {
     background-color: green;
-    width: 500px;
 }
-
 .gridFour > #gridFourB {
-    grid-column: 1 0;
+    grid-template-columns: 2fr 1fr;
     grid-row: 2;
 }
 
@@ -54,18 +52,13 @@ h2 {
 
 .gridFiveBase {
     background-color: gray;
+    grid-template-rows: 1fr 1fr;
 }
-
-.gridFivePartA {
-    display: grid;
-}
-
 .gridFive {
     display: grid;
-    grid-column: 1 0;
-    grid-row: 2;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 0.5em 0.5em 0.5em;
 }
-
 .gridFive img {
     object-fit: cover;
     width: 200px;
@@ -76,9 +69,8 @@ h2 {
 .gridSix {
     grid-template-columns: 1fr 3fr;
     background-color: lightgray;
-    width: 500px;
+
 }
 .sixB p {
-
     font: 0.83rem "Sixtyfour Convergence", serif;
 }
