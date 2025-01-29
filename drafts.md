@@ -61,5 +61,4 @@ Sintáxis para incluirlo:
 ```
   
 4. **¿Qué significa Unidad fraccionaria (fr) con CSS Grid?**:  
-Las Fraction Units (fr), como unidades de medida, son una forma "universal" para asegurar que el contenido va a mostrarse de la misma forma en diferentes dispositivos/resoluciones.  
-En CSS Grid aplica a las fraccione usadas para dimensionar las filas o columnas, unas respecto a las otras, según lo indiquemos.  
+Las Unidades Fraccionarias, como unidades de medida, son una forma "universal" para asegurar que el contenido va a mostrarse de la misma forma siempre, en base a dividir su contenido tantas partes como se le indique respecto al espacio disponible.
