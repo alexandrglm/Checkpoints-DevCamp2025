@@ -31,12 +31,20 @@ $margins: 2em 0.5em 3em 0.2em;
 
 3. **¿Qué es un SCSS Mixin? (porque crees que debes utilizarla pon un ejemplo de un mixin, escribiendo cómo se crea y como se pondría para utilizarla):**  
 Son bloques de código para optimizar en tiempo de desarrollo, aplicando estilos que pueden ser repetidos en distintas partes de la hoja de estilos final, de manera más compleja que usando variables, con solo hacer referencia al @mixin especificado.
+
 ```scss
+/*
+1. Creamos el mixin, con su nombre definido y los atributos
+Sintáxis:
+*/
 @mixin gridsWithSameAttr {
   display: grid;
-  background-color: lime !default:
+  background-color: lime !default;
 }
 
+/* 2. Anidamos el mixin donde sea necesario.
+Sintáxis para incluirlo:
+*/
 .wrapperOne {
   .wrapperOneSub {
     @include gridsWithSameAttr;
