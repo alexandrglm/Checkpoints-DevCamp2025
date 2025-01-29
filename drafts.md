@@ -25,7 +25,7 @@ $margins: 2em 0.5em 3em 0.2em;
 }
 .wrapperThree {
   margin: $margins
-  
+}
 ```
 
 
