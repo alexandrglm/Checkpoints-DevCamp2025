@@ -10,9 +10,9 @@ Las mayores diferencias entre CSS y SCSS:
 - 
 
 
-2. **¿Qué es una variable SCSS? (porque crees que debes utilizarla pon un ejemplo de una variable, escribe una variable y como se pondría para utilizarla):**
-Una variable es una porción de código, en este caso, para ser reutilizada cuando necesario.
-Bien utilizadas, permite mejorar el tiempo de desarrollo así como el mantenimiento/escalabilidad del proyecto.
+2. **¿Qué es una variable SCSS? (porque crees que debes utilizarla pon un ejemplo de una variable, escribe una variable y como se pondría para utilizarla):**  
+Una variable es una porción de código, en este caso, para ser reutilizada cuando necesario.  
+Bien utilizadas, permite mejorar el tiempo de desarrollo así como el mantenimiento/escalabilidad del proyecto.  
 Ejemplo de uso:  
 ```scss
 $margins: 2em 0.5em 3em 0.2em;
