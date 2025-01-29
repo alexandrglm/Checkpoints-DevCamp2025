@@ -1,7 +1,10 @@
+
 .container {
     display: grid;
     max-width: 500px;
+    
 }
+
 
 /* 01 */
 .wrapperOne {
@@ -25,27 +28,24 @@
 /* 03 */
 
 .gridThree {
-    grid-template-columns:  1fr 3fr;
+    grid-template-rows:  1fr 3fr;
     max-width: 500px;
 }
-
-
-
 .gridThreeB img {
-    width: 500px;
+    object-fit: cover;
+    max-width: 500px;
 }
 
 /* 04 */
 
 .gridFour {
-    grid-template-rows: 1fr 1fr;
     background-color: green;
     width: 500px;
 }
 
-
 .gridFour > #gridFourB {
-    grid-template-columns: 1fr 1fr;
+    grid-column: 1 0;
+    grid-row: 2;
 }
 
 /* 05 */
@@ -54,10 +54,19 @@
     background-color: gray;
 }
 
-.gridFivePartA
+.gridFivePartA {
+    display: grid;
+}
+
+.gridFive {
+    display: grid;
+    grid-column: 1 0;
+    grid-row: 2;
+}
 
 .gridFive img {
-    
+    object-fit: cover;
+    width: 200px;
 }
 
 /* 06 */
