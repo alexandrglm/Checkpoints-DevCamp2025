@@ -25,6 +25,7 @@
         .flexTwo {
             display: flex;
             flex-direction: column;
+            width: 20vw;
         }
         .flexTwo div {
             margin: 2px;
@@ -32,12 +33,10 @@
         /* 03 */
         .flexThree {
             display: flex;
+            flex-direction: row-reverse;
+            
         }
         .flexThree div {
-            display: flex;
-            /* flex-direction: row-reverse;*/
-
-
             margin: 2px;
         }
         /* 04 */
@@ -55,9 +54,8 @@
             background-color: #3d8b6d;
         }
         /* 05 */
-        .flexfive {
-
-
+        .flexFive {
+            display: flex;;
             width: 350px;
         }
         .flexFive .item {
@@ -150,44 +148,61 @@
         }
 
         /* 09 */
-        
+        .flexNine {
+            display: flex;
+            background-color: #eee;
+            width: 450px;
+            height: 250px;
+            
+            justify-content:space-evenly;
+        }
+        .flexNine #special {
+            align-self: flex-end;
+        }
+
 
     </style>
     <!-- <style href="./02-flex.css" type="text/css"></style>-->
 </head>
 <body>
+    <br>
+    <h4>Exercise 1</h4>
     <div class="flex flexOne">
         <div class="square">1</div>
         <div class="square">2</div>
         <div class="square">3</div>
     </div>
-
+    <br>
+    <h4>Exercise 2</h4>
     <div class="flex flexTwo">
         <div class="square">1</div>
         <div class="square">2</div>
         <div class="square">3</div>
     </div>
     <br>
-    <h4>Exercise 3: Pending Fix row-reverse fixes</h4>
+    <h4>Exercise 3</h4>
     <div class="flex flexThree">
         <div class="square">1</div>
         <div class="square">2</div>
         <div class="square">3</div>
     </div>
-
+    <br>
+    <h4>Exercise 4</h4>
     <div class="flex flexFour">
         <div class="square">1</div>
         <div class="square">2</div>
         <div class="square">3</div>
         <div class="square">4</div>
     </div>
-    <h4>Exercise 5: Pending Fix 2nd block grow</h4>
+    <br>
+    <h4>Exercise 5</h4>
     <div class="flex flexFive">
         <div class="item">a</div>
         <div class="item" id="grow">b</div>
         <div class="item">c</div>
     </div>
-
+    <br>
+    <h4>Exercise 6</h4>
     <div class="flex flexSix">
         <div class="one">
             <div class="square">1</div>
@@ -242,13 +257,14 @@
             <div class="square">3</div>
         </div>
     </div>
-<!--
+    <br>
+    <h4>Exercise 9</h4>
     <div class="flex flexNine">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square" id="special"></div>
-        <div class="square"></div>
+        <div class="square">1</div>
+        <div class="square">2</div>
+        <div class="square" id="special">3</div>
+        <div class="square">4</div>
     </div>
--->
+
 </body>
 </html>
