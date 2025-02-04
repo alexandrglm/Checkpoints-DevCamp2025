@@ -10,7 +10,7 @@ configure a basic appareance-structure needed. The UX foundation, to be
 shown/materialised, needs to be shown throught the elements.  
 
 `¿Qué es Git y para qué sirve?`
-It's a DSCV which let works using local copies of a development,, on which each part of a development team can work at their own/on their specific part, then, merging/updating their result to the main branch.  
+It's a DVSC which let collaborative workin by using local copies of a development, on which each part of a development team can work at their own/on their specific part, then, merging/updating their result to the main branch.  
 
 
 `¿Qué es un mapa del sitio?`:  
