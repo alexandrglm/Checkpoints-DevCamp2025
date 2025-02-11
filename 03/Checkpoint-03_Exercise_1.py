@@ -21,7 +21,7 @@ print(added_number)
 
 # Exercise 5
 
-grabbed_list_2 = list[3]
+grabbed_list_2 = list[-1]
 print(grabbed_list_2)
 
 # Exercise 6
@@ -40,7 +40,8 @@ print(new_string)
 # Exercise 8
 
 stringed_number = str(number)
-print(stringed_number)
+new_sentence = f' The number is: {stringed_number}'
+print(new_sentence)
 
 # Exercise 9
 
