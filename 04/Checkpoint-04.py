@@ -65,12 +65,3 @@ print(my_tuple)
 
 
 
-colores_primarios = [ [luz = 'rojo', 'verde', 'azul' ], [[ pigmento = 'cyan', 'magenta',
-'amarillo'] ]
-
-colores_primarios = [
-    {'rojo' : 
-]
-
-
-
