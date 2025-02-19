@@ -62,3 +62,15 @@ print(sorted(my_list_restarted))
 print('\nOriginal tuple: \n'f'{my_tuple}')
 my_tuple += ('Now I\'m a mixed tuple', 42)
 print(my_tuple)
+
+
+
+colores_primarios = [ [luz = 'rojo', 'verde', 'azul' ], [[ pigmento = 'cyan', 'magenta',
+'amarillo'] ]
+
+colores_primarios = [
+    {'rojo' : 
+]
+
+
+
