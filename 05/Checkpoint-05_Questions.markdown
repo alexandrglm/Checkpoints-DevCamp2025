@@ -14,7 +14,7 @@ Qué, Por qué, Para qué, Cuándo, Dónde,
 
 ##### Definicion:
 
-  Un condicional es una estructura de control para determinar posibles salidas de datos en base a unas condiciones determinadas.
+Un condicional es una estructura de control para determinar posibles salidas de datos en base a unas condiciones determinadas.
 
 Los lenguajes de programación orientados a objetos (OOP), como Python, depositan en memoria los diferentes objetos que van creando, que van desarrollandose, a medida que se ejecuta el código.
 
@@ -64,7 +64,7 @@ Y, al igual que en la teoría de la electrónica, los semiconductores, "chips", 
 
 ****
 
-# ¿Qué es una funciójn Lambda en Python?
+# ¿Qué es una función Lambda en Python?
 
 
 
