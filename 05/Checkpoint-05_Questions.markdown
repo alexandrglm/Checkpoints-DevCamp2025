@@ -34,8 +34,6 @@ Las principales declaraciones de condicionales son `if`, `elif`, `else`.
 2. **Condicional Comnpuesto**:  
 3. **Condicional Múltiple**:  
 
-
-
 ## Sintáxis:
 
 Seguimos una sintáxis concreta que, además, es indentada.  
@@ -45,7 +43,6 @@ Seguimos una sintáxis concreta que, además, es indentada.
 A cada declaración de condicional siempre le seguirá un colon (`:`), y sus propias instrucciones se mantendrán en un nivel de jerarquía inferior.
 
 ```python
-
 # Sintáxis genérica
 
 if condicion:
@@ -93,8 +90,6 @@ elif elegido < valor:
 
 else:
     print('Has elegido el valor exacto')
-   
-
 ```
 
 ## Casos de uso:
@@ -105,23 +100,13 @@ else:
 
 * Validación de entrada de de datos
 
-
-
-## Dónde usar:
-
 * En cualquier parte del código donde se necesite tomar unas acciones u otras en base a un resultado, una función, un estado, dado.
 
 * Pueden usarse dentro de funciones, bucles (se explicarán más adelante), o incluso dentro de otros condicionales. Mientras la lógica y sintaxis sean correctas y acordes a los resultados esperados, los condicionales serán útiles.
 
-
-
-
-
 ****
 
 # 2. ¿Cuáles son los diferentes tipos de bucles en Python? ¿Por qué son útiles?
-
-
 
 ## Definición:
 
@@ -131,22 +116,46 @@ Nos permiten automatizar tareas, aplicar unas acciones sobre múltiples datos de
 
 Un bloque de código puedes er ejecutado varias veces sin tener que escribirlo repetidamente en nuestro programa. 
 
-
-
 ## Tipos de Bucles:
-
-
 
 1. Bucle `For....in`
 2. Bucle `While`
-   
-   
+
+## SIntáxis:
+
+```python
+# For....in
+
+for elemento in elementos:
+    acción
 
 
+# While
+
+while condicion:
+    acción
+
+## While - Break
+
+while condicion:
+    acción
+    break
 
 
+## While - Continue
+
+while condición:
+    acción
+    continue
 
 
+## While - Else
+
+while condición:
+    acción
+else:  
+    acción en 
+```
 
 ## Casos de uso:
 
@@ -161,8 +170,81 @@ En concreto:
 * `For...in` se usan cuando queremos iterar, trabajar, sobre una lista finita y conocida de datos.
 
 * `While` pueden usarse cuando no conocemos la exactitud de los datos sobre los que operar.
+  
+  * `While + Break`: 
+    
+    Con `break` podemos detener la ejecución, incluso cuando la condición se cumple.
+  
+  * `While + Continue`:
+    
+    `Continue`puede detener la ejecución del bucle, indistintamente de lo cumplido con la condición, y continuar con la siguiente iteración.
+  
+  * `While + Else`:
+    
+    Como en los condicionales, usar la declaración `else`permite añadir una posibilidad de acción cuando la condición deja de cumplirse.
 
 
+
+## Ejemplos
+
+```python
+# For... in
+
+lista = ['Pepe', 'Juan', 'Carlos', 'Rosa']
+
+indice = 0
+for  elemento in lista:
+    indice += 1
+    print(f'La persona "{elemento}" es la N.{indice} en la lista')
+
+
+
+# While
+
+indice = 0
+
+while indice < 10:
+    indice += 1
+    print(indice)
+
+
+# While - Break
+## Los números del 1 al 10 pero cortamos en el 3
+
+indice = 0
+
+while indice < 10:
+    indice += 1
+    print(indice)
+    if indice == 3:
+        print(f'El {indice} hace break porque esa es la condición ergo el bucle se detiene aquí')
+        break
+    indice += 1
+
+
+# While - Continue
+
+indice = 0
+
+while indice < 6:
+    indice += 1
+    if indice == 3:
+        print(f'El numero {indice} se queda fuera porque esa es la condición añadida, y continuamos el bucle ')
+        continue
+    print(indice)
+
+
+# While - Else
+
+indice = 0
+
+while indice <= 6:
+    indice += 1
+    print(indice)
+
+else:
+    print(f'El bucle termina por que {indice} se sale del num. máximo de iteraciones')
+```
 
 ## Dónde usar:
 
@@ -172,6 +254,18 @@ En concreto:
 
 - Mientras la lógica y sintaxis sean correctas y acordes a los resultados esperados, los condicionales serán útiles.
 
+- Siempre preferimos usar bucles `for....in` por encima de `While` cuando posible, porque al conocer las todas las iteraciones y casos posibles que manejamos, evitamos errores y excepciones no previstas que detendrán la ejecución de nuestro programa.
+
+
+
+## Referencias:
+
+* [Python]
+
+****
+
+# 3. ¿Qué es una lista por comprensión en Python?
+
 
 
 
@@ -180,10 +274,7 @@ En concreto:
 
 ```
 
-
-
-
- ****
+  ****
 
 
 
@@ -192,7 +283,7 @@ En concreto:
 
  ****
 
-# ¿Qué es una lista por comprensión en Python?
+# 
 
 
 
