@@ -23,7 +23,7 @@ print(suma(12, 14, 16))
 
 # 4. -Utilizando la siguiente lista y variable, determine si el valor de la variable coincide o no con un valor de la lista. *Sugerencia, si es necesario, utilice un bucle for in y el operador in.
 
-
+"""
 nombre = 'Enrique'
 
 lista_nombre = 'Jessica', 'Paul', 'George', 'Henry', 'Adán'
@@ -33,4 +33,32 @@ if nombre in lista == True:
     print(f'El valor {nombre} sí está en la lista')
 else:
     print(f'El valor {nombre} no está en la lista')
+"""
 
+# Corrección: 
+# Falta la lógica para iterar sobre la lista, **creando un nuevo objeto** que sea un booleano respecto a coincidencia o no.
+
+
+nombre = 'Enrique'
+
+lista_nombre = 'Jessica', 'Paul', 'George', 'Henry', 'Adán'
+lista = list(lista_nombre)
+
+coincide = False
+
+for _ in lista:
+    if _ == nombre:
+        coincide = True
+        break
+
+if coincide == True:
+    print(f'El nombre {nombre} sí está en la lista')
+else:
+    print(f'El nombre {nombre} no está en la lista')
+
+
+# También he probado a usar lista sin pasarlo a list(). 
+# Daba por hecho que debía convertir el objeto a lista, sin tener en cuenta
+# que un objeto listado sin ningún símbolo es interpretado como una tupla.
+
+print(type(lista_nombre))
