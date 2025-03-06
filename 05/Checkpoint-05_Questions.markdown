@@ -183,8 +183,6 @@ En concreto:
     
     Como en los condicionales, usar la declaración `else`permite añadir una posibilidad de acción cuando la condición deja de cumplirse.
 
-
-
 ## Ejemplos
 
 ```python
@@ -256,8 +254,6 @@ else:
 
 - Siempre preferimos usar bucles `for....in` por encima de `While` cuando posible, porque al conocer las todas las iteraciones y casos posibles que manejamos, evitamos errores y excepciones no previstas que detendrán la ejecución de nuestro programa.
 
-
-
 ## Referencias:
 
 * [Python]
@@ -266,14 +262,17 @@ else:
 
 # 3. ¿Qué es una lista por comprensión en Python?
 
+****
 
+# 4. ¿Qué es un argumento en Python?
 
+****
 
+# 5. ¿Qué esun paquete PIP?
 
 
 
 ```
-
   ****
 
 
