@@ -28,8 +28,6 @@ Seguimos una sintaxis concreta que, además, es **indentada**. Es muy importante
 
 A cada declaración de condicional siempre le seguirá un **colon (`:`)** y sus propias instrucciones se mantendrán en un nivel de jerarquía inferior.
 
-
-
 # Sintaxis genérica
 
 ```python
@@ -98,8 +96,6 @@ else:
 ## Referencias
 
 [4. More Control Flow Tools &#8212; Python 3.13.2 documentation](https://docs.python.org/3/tutorial/controlflow.html)
-
-
 
 ---
 
@@ -252,8 +248,6 @@ else:
 [WhileLoop - Python Wiki](https://wiki.python.org/moin/WhileLoop)
 
 [Bucles - Tutorial de Python](https://tutorial.recursospython.com/bucles/)
-
-
 
 ---
 
@@ -439,8 +433,6 @@ Estas bibliotecas, después, son importadas en nuestro código según sea necesa
 Dependerá de nuestro sistema operativo, y si la instalación de Python forma parte
  del sistema o es un elemento independiente, la forma de obtener nuestro PIP.  
 
-
-
 El manejo básico es:  
 
 ```bash
@@ -487,4 +479,42 @@ raices(25)
 raices(81)
 ```
 
+****
 
+# 6 - ¿Qué es una función Lambda en Python?
+
+## Definición:
+
+Una función `lambda` es **una función anidada, anónima, dentro de otra función o parte del código**.
+
+Es un concepto muy útil para desarrollar un código más conciso y escalable, pudiendo aplicar una función completa con argumentos sin tener que desarrollar toda una función.
+
+Es un concepto similar a las funciones flecha `=>` en JavaScript.
+
+## Sintáxis y Ejemplos
+
+```python
+lambda argumentos : expresion
+```
+
+```python
+# Asignamos una función lambda para construir una cadena en base a varias cadenas
+nombre_completo = lambda nom, ape : f'{nom} {ape}'
+
+# Después podemos usar la variable que contiente la función lambda de manera genérica en nuestra funci
+def saludar(nombre_completo):
+    print(f'Hola, {nombre_completo}, ¿Cómo estás?')
+
+saludar(nombre_completo('Pepito', 'Perez'))
+
+
+
+```
+
+
+
+## Referencias
+
+[4. More Control Flow Tools &#8212; Python 2.7.18 documentation](https://docs.python.org/2/tutorial/controlflow.html)
+
+[lambda &mdash; Python Reference (The Right Way) 0.1 documentation](https://python-reference.readthedocs.io/en/latest/docs/operators/lambda.html)
