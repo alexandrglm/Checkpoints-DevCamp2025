@@ -154,7 +154,7 @@ while condición:
 while condición:
     acción
 else:  
-    acción en 
+    acción en omisi
 ```
 
 ## Casos de uso:
@@ -256,21 +256,119 @@ else:
 
 ## Referencias:
 
-* [Python]
+[Python Wiki: For](https://wiki.python.org/moin/ForLoop)
+
+[Python Wiki: While](https://wiki.python.org/moin/WhileLoop)
+
+[RecursosPython.com: Bucles](https://tutorial.recursospython.com/bucles/)
 
 ****
 
-# 3. ¿Qué es una lista por comprensión en Python?
+# 3 - ¿Qué es una lista por comprensión en Python?
+
+## Definición:
+
+Una lista por comprensión (list comprehesion) es una técnica que nos permite generar listas a necesidad y de manera concisa en pocas lineas de código, sin necesidad de usar, por ejemplo, bucles de manera clásica.
+
+Debemos comprender bien la sintaxis de los bucles, así como entender los distintos tipos de datos primitivos, en este caso, listas.
+
+Para ello, asignamos a una nueva variable la expresión, que incluye un bucle, de la siguiente manera.
+
+## Sintáxis
+
+```python
+# Sintáxis Genérica
+
+nueva_lista = range(1,11)    # Generamos una nueva lista con range()
+
+nueva_lista = [ (operación que incluya "elemento") for elemento in nueva_lista ]
+```
+
+## Caso 1: Usando Bucles vs Comprensión de lista
+
+```python
+## Usando Bucles
+
+num_list = range(1,11)
+
+numeros_al_cuadrado = []
+
+for num in num_list:
+    numeros_al_cuadrado.append(num ** 2)
+
+print(list(num_list))       # Nuestra lista original, generada con range()
+print(numeros_al_cuadrado)  # Lista generada, recogiendo vada valor generado en num_list y aplicando la operación
+```
+
+```python
+## Usando Comprensión de Listas
+
+numeros_al_cuadrado = [ num ** 2 for num in num_list]
+print(numeros_al_cuadrado)
+```
+
+Con comprensión de listas hemos reducido la cantidad de código necesario para realizar la misma acción.
+
+## Casos de uso:
+
+- Crear listas de manera eficiente y con menos código.
+- Manipular elementos de una lista al realizar una acción sobre los elementos de dicha lista.
+
+## Ejemplos:
+
+```python
+# Crear una lista de cuadrados (Creación)
+cuadrados = [num ** 2 for num in range(1, 11)]
+print(cuadrados)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Obtención de números pares de una lista (Filtrado)
+pares = [num for num in range(1, 11) if num % 2 == 0]
+print(pares)  # Salida: [2, 4, 6, 8, 10]
+```
+
+## Referencias:
+
+- [Python Docs: Comprensión de listas [Inglés]](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+- [GeeksforGeeks: List Comprehesion [Inglés]](https://www.geeksforgeeks.org/python-list-comprehension/)
+- [Nivaria.net: Listas por comprensión](http://www.nivaria.net/blog/index.php/python/445-listas-por-comprension))
 
 ****
 
-# 4. ¿Qué es un argumento en Python?
+# 
+
+4. ¿Qué es un argumento en Python?
+
+## Definición:
+
+Asumiendo que ya conocemos qué es una función, su sintáxis y desarrollo, los argumentos son aquellos valores que pasamos a una función cuando esta es invocada.
+
+Con ello, podemos usar una función genérica para distintos tipos de salida de datos, según necesario.
+
+Hay varios tipos de Argumentos:
+
+1. Posicionales.
+   
+   Se pasan en el mismo orden en el que aparecen al definir la función.
+
+2. Por Defecto.
+   
+   Se pasan especificando el nombre del parámetro.
+
+3. Nombrados.
+   
+   Se pasan añadiendo un valor preasignado en caso de no pasar dicho argumento al invocar la función.
+
+4. Variables.
+   
+   Permiten pasar un número no especificado de argumentos posicionales.
+
+5. Variables de Palabra Clave.
+   
+   Igual que en el caso anterior, pero siendo argumentos nombrados.
 
 ****
 
 # 5. ¿Qué esun paquete PIP?
-
-
 
 ```
   ****
