@@ -1,26 +1,28 @@
 """
 Checkpoint 6, Pregunta 3:
-Para hacer menos abstracto los conceptos sobre los métodos típicos HTTP en API's estilo REST, 
- vamos a crear un programa que muestre cómo configuarmos cada endpoint según el método, 
- y cómo lo llamamos.
+Para hacer menos abstracto los conceptos sobre los métodos típicos HTTP 
+en API's estilo REST, vamos a crear un programa que muestre cómo 
+configuarmos cada endpoint según el método, y cómo lo llamamos.
 
-El programa excede de ámbito de esta respuesta,
- pero trata de mostrar la mayoría de conceptos aprendidos en esta parte del Móulo 3, 
- mostrando cómo desarrollamos cada endpoint de cada método que usaremos (GET, POST, PUT y DELETE).
+El programa excede de ámbito de esta respuesta, pero trata de mostrar 
+la mayoría de conceptos aprendidos en esta parte del Móulo 3,
+ mostrando cómo desarrollamos cada endpoint de cada método que usaremos 
+ (GET, POST, PUT y DELETE).
 
-Usaremos Flask, y algunas de sus funciones 
- para el motor que crear un servidor (en localhost:8080)m 
- y el manejo de la base de datos /JSON en los endpoints.
+Usaremos Flask, y algunas de sus funciones para el motor
+que crea un servidor (en localhost:8080) y el manejo de la 
+base de datos/JSON en los endpoints.
 
-Un menú en terminal nos habilita para hacer las peticiones, 
- introducir datos cuando proceda y mostrar el estado actual del JSON al finalizar la operación.
+Un menú en terminal nos habilita para hacer las peticiones,
+introducir datos cuando proceda y mostrar el estado actual del 
+JSON al finalizar la operación.
 
-Se aplica validación de entrada de datos en cada endpoint y en el menú en consola, para mejorar
-la experiencia de uso usando Postman (cualquier )
-Para poder mostrar este menú, a la vez que mantenemos el servidor activo con los endpoints, 
-trabajando sólo con un script en ejecución, usaremos Threadings, y Time.
+Para poder mostrar este menú, a la vez que mantenemos el servidor activo 
+con los endpoints, trabajando sólo con un script en ejecución,
+usaremos Threading, y Time.
 
-Aunque será código funcional, se limitará a trabajar los datos desdel el front-end en una Terminal
+Aunque será código funcional, se limitará a trabajar los datos 
+desde el front-end en Terminal.
 """
 ##################################
 # 1. Importamos los módulos necesarios.
@@ -38,11 +40,15 @@ db = [
     {'id' : '3', 'nombre' : 'Juan', 'apellidos' : 'Fernandez Gonzalez'},
 ]
 ##################################
-# 3. Creamos la Clase y Decorador para cómo queremos visualizar los GET de nuestro JSON
+# 3. Creamos la Clase y Decorador para cómo queremos visualizar 
+# los GET de nuestro JSON. Será usado sólo en terminal.
+# Nuestra API sigue siendo compatible con Postman
 class MostrarData:
     def __init__(self, ficha):
         self.ficha = ficha
-
+    
+    # Se podría usar un dunder __str__ también, pero, por variedad
+    # añadimos un decorador 
     @property
     def formato_json(self):
         return f'''

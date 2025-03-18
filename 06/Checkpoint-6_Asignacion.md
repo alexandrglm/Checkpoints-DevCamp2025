@@ -89,17 +89,17 @@ Existen otros métodos, como:
 
 * **PATCH**: Permite actualizar parcialmente un registro.
 
-Para hacer menos abstracto los conceptos sobre los métodos típicos HTTP en API's estilo REST, vamos a crear un programa que muestre cómo configuarmos cada endpoint según el método, y cómo lo llamamos.
+Para hacer menos abstracto los conceptos sobre los métodos típicos HTTP en API's estilo REST, vamos a crear un programa que muestre cómo configuarmos cada endpoint según el método, y cómo lo llamamos.  
 
-El programa excede de ámbito de esta respuesta, pero trata de mostrar la mayoría de conceptos aprendidos en esta parte del Móulo 3, mostrando cómo desarrollamos cada endpoint de cada método que usaremos (GET, POST, PUT y DELETE).
+El programa excede de ámbito de esta respuesta, pero trata de mostrar la mayoría de conceptos aprendidos en esta parte del Móulo 3, mostrando cómo desarrollamos cada endpoint de cada método que usaremos  (GET, POST, PUT y DELETE).  
 
-Usaremos Flask, y algunas de sus funciones para el motor que crear un servidor (en localhost:8080)m y el manejo de la base de datos /JSON en los endpoints.
+Usaremos Flask, y algunas de sus funciones para el motor que crea un servidor (en localhost:8080) y el manejo de la base de datos/JSON en los endpoints.  
 
-Un menú en terminal nos habilita para hacer las peticiones, introducir datos cuando proceda y mostrar el estado actual del JSON al finalizar la operación.
+Un menú en terminal nos habilita para hacer las peticiones, introducir datos cuando proceda y mostrar el estado actual del JSON al finalizar la operación.  
 
-Para poder mostrar este menú, a la vez que mantenemos el servidor activo con los endpoints, trabajando sólo con un script en ejecución, usaremos Threadings, y Time.
+Para poder mostrar este menú, a la vez que mantenemos el servidor activo con los endpoints, trabajando sólo con un script en ejecución, usaremos Threading, y Time.
 
-Aunque será código funcional, se limitará a trabajar los datos desdel el front-end en Terminal.
+Aunque será código funcional, se limitará a trabajar los datos desde el front-end en Terminal.
 
 ```python
 ##################################
@@ -118,8 +118,7 @@ db = [
     {'id' : '3', 'nombre' : 'Juan', 'apellidos' : 'Fernandez Gonzalez'},
 ]
 ##################################
-# 3. Creamos la Clase y Decorador para cómo queremos visualizar 
-# os GET de nuestro JSON. Será usado sólo en terminal
+# 3. Creamos la Clase y Decorador para cómo queremos visualizar los GET de nuestro JSON
 class MostrarData:
     def __init__(self, ficha):
         self.ficha = ficha
@@ -133,10 +132,9 @@ Nombre: {self.ficha['nombre']}
 Apel1lidos: {self.ficha['apellidos']}
 ------------------------
 '''
-
+    
 ##################################
 # 4. Creamos los endpoints y sus rutas
-
 ## Empezamos con los "tres verbos de la API"
 
 ## GET: Todas las fichas
@@ -149,14 +147,16 @@ def get_recibir_fichas():
 def get_recibir_una_ficha(user_id):
 
     ficha = next((user for user in db if user['id'] == user_id), None)
-
+    
     return jsonify(ficha)
+
+
 
 ## POST: Crear una ficha
 @app.route('/db', methods=['POST'])
 def post_crear_ficha():
     nueva_ficha = request.json
-
+    
     if not nueva_ficha['id'].isdigit():
         return None, 400
 
@@ -180,7 +180,7 @@ def put_actualizar_ficha(user_id):
 
     ficha_put.update(request.json)
     return jsonify(db)
-
+   
 
 # 4.2   También añadimos más métodos útiles, como DELETE
 ## DELETE:  Eliminar una ficha
@@ -212,14 +212,14 @@ def menu():
 
             # .get()
             respuesta = requests.get('http://127.0.0.1:8080/db').json()
-
+            
             print('\nEstas son todas las fichas: \n')
             mostrar_data(respuesta)
 
         elif menu_eleccion == '2':
 
             user_id = input('\nElige un ID: ')
-
+            
             # .get()
             respuesta = requests.get(f'http://127.0.0.1:8080/db/{user_id}').json()
             print('\nResultado: \n')
@@ -283,7 +283,7 @@ def menu():
             if not any(ficha['id'] == user_id for ficha in db):
                 print('\nNo existe el ID.')
                 continue
-
+            
             # .delete()
             respuesta = requests.delete(f'http://127.0.0.1:8080/db/{user_id}').json()
             print(f'\nPorcesando eliminado de ficha {user_id}...\n\n')
@@ -309,11 +309,9 @@ if __name__ == '__main__':
     # El import de time era para esto (añadir unos segundos hasta tener el server operativo)
     time.sleep(3)
 
-    #Iniciamos nuestro men
     menu()
-```
-
-#### Referencia:
+    ```
+    #### Referencia:
 
 [Mozilla: Todos los métodos HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Methods)  
 [Python REST APIs With Flask ](https://realpython.com/flask-connexion-rest-api/) * Es una guía muy interesante que amplía Flask Rest API.
