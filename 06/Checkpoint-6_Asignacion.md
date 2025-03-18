@@ -315,7 +315,7 @@ if __name__ == '__main__':
 
 [Mozilla: Todos los métodos HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Methods)  
 [Python REST APIs With Flask ](https://realpython.com/flask-connexion-rest-api/) * Es una guía muy interesante que amplía Flask Rest API.
-
+```
 ****
 
 ## 4)    ¿Es MongoDB una base de datos SQL o NoSQL?
