@@ -1,10 +1,12 @@
-## 7.1:     ¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?
+### 
+
+# 7.1: ¿Qué diferencia a JavaScript de cualquier otro lenguaje de programación?
 
 Características específicas de JavaScript:
 
 1. Es un lenguaje interpretado, no compilado, es decir, se procesa directamente en tiempo de ejecución, habitualmente, en un navegador.
 
-2. Es un lenguaje de tipado débil, dinámico. Esto quiere decir que una variable puede contener  cualquier tipo de dato y, además, no se ha de especificar qué tipo de dato contiene en su declaración. 
+2. Es un lenguaje de tipado débil, dinámico. Esto quiere decir que una variable puede contener cualquier tipo de dato y, además, no se ha de especificar qué tipo de dato contiene en su declaración.
    
    Esto, si bien ofrece ventajas, como un desarrollo de código más rápido, contrasta con las ventajas que otros lengiajes de tipado fuerte (Como la verisón de JS compilado creada por Microsoft llamada TypeScript, C, o Java) de cara a depurar posibles errores en el códigop pues, ofreciendo capacidad de mutar el tipo de dato (*any*), podemos introducir errores en nuestro código si no manejamos correctamente el flujo de datos y, una función, o una parte de nuestro código, transforma y/o malinterpreta un valor detereminado.
 
@@ -20,20 +22,18 @@ Características específicas de JavaScript:
    
    1. Null siempre es null, salvo cuando se busca el tipo de null.
       Ocurre similar con NaN, "Numero No Asignado". No se asigna valor pero se considera valor.
-      
-      ```js
-      console.log(typeof null);    // object
-      console.log(typeof NaN);    // number
-      ```
-   
-   2. Los números en punto flotante están aparentemente rotos:
-      
-      ```js
+- ```js
+  console.log(typeof null);    // object
+  console.log(typeof NaN);    // number
+  ```
+
+- Los números en punto flotante están aparentemente rotos:
+1. 1. ```js
       function sum(){
       
-         aaaa = 0.12;
-         bbbb = 0.02;
-         return aaaa + bbbb
+       aaaa = 0.12;
+       bbbb = 0.02;
+       return aaaa + bbbb
       
       }
       
@@ -42,6 +42,6 @@ Características específicas de JavaScript:
       
       La realidad no es que estén rotos sino que, los números en coma flotante no pueden hacer una representación exacta de valores enteros, por lo que nos encontramos con estas casuísticas que suelen ser evitadas trabajando con magnitudes superiores para evitar decimales, o con otras librerías numéricas.
 
-****
+---
 
-Por estas, y otras razones, JavaScript es un muy poderoso motor no sólo para front-end en HTML.
+Por estas, y otras razones, JavaScript es un muy poderoso motor no sólo para funciones básicas en el front-end.

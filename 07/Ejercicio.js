@@ -1,28 +1,15 @@
-document.getElementById('comprobar').addEventListener('click', function(){
+function masMenos(uno, dos, tres, cuatro){
 
-    let uno, dos, tres, cuatro;
+    preUno = uno + dos;
+    preDos = tres + cuatro;
+    total = (preUno * preDos);
 
-    uno = parseInt(document.getElementsByClassName('uno')[0].value)
-    dos = parseInt(document.getElementsByClassName('dos')[0].value)
-    tres = parseInt(document.getElementsByClassName('tres')[0].value)
-    cuatro = parseInt(document.getElementsByClassName('cuatro')[0].value)
+    retorno = (total <= 50) ? "El número es menor que 50" : "El número es (igual o) mayor que 50!" ;
 
-    function masMenos(uno, dos, tres, cuatro){
+    return retorno
 
-        preUno = uno + dos;
-        preDos = tres + cuatro;
-        total = (preUno * preDos);
-        
-        retorno = (total < 50) ? "El número es menor que 50" : "El número es (igual o) mayor que 50!" ;
-        
-        return retorno
-        
-    }
-    
-    comprobado = masMenos(uno, dos, tres, cuatro);
+}
 
-    document.getElementById('salida').textContent = comprobado
+console.log(masMenos(1,2,3,4))
 
-});
-
-
+console.log(masMenos(37,28,39,52))

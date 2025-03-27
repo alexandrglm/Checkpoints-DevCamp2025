@@ -50,9 +50,7 @@ Los principales condicionales en JavaScript son:
   }
   ```
 
-Existen más formas de compactar condicionales usando && (AND) y || (OR), para dichas condiciones específicas.
-
-
+Existen más formas de compactar condicionales usando && (AND) y || (OR), para dichas condiciones específicas.  
 
 El uso de cada condicional se verá delimitado por el tipo de casos a evaluar y funciones a implementar para cada uno, siendo 'if/else' el más útil y fléxible.
 
