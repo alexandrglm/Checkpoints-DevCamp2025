@@ -162,6 +162,64 @@ console.log(Verde)
 console.log(Blanco)
 */
 
+/*
+const cocheUno = { marca: 'Ford', modelo: 'Cabrio'};
+
+const { marcaCocheUno, modeloCocheUno } = coche
 
 
+console.log(marcaCocheUno);     // Ford
+console.log(modeloCocheUno);    // Cabrio
+*/
+/*
+const cestaFrutasUno = ['Pera', 'Manzana', 'Kiwi']
+const cestaFrutasDos = [ 'Kiwi', 'Ciruela', 'Mango']
 
+cestaFrutasUno.push(...cestaFrutasDos)
+
+
+console.log(cestaFrutasUno);
+*/
+
+/*
+const originales = [10, 500, 252]
+const copias = [...originales]
+
+copias.pop()
+
+console.log(copias);
+console.log(originales);
+*/
+/*
+let numeros = [12, 121, 41, 32, 1000]
+
+function suma(...numeros) {
+    return numeros.reduce( (a, b) => a + b )
+}
+
+
+console.log(suma(...numeros));
+*/
+
+/*
+function saludar(nombre, apellido)  {
+
+    return `Hola, ${nombre} ${apellido} !`
+
+}
+
+const usuarioUno = ['Alexandr', 'Gomez'];
+
+console.log(saludar(...usuarioUno));
+*/
+
+const usuarioDos = {
+    nombre: 'Alexnadr',
+    apellido: 'Gomez',
+    edad: '36'
+}
+
+const { nombre, ...restoDatos } = usuarioDos;
+
+console.log(nombre);            // Alexandr
+console.log(restoDatos);        // {apellido: 'Gomez', edad: '36'}
