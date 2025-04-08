@@ -113,4 +113,38 @@
 /*
 rollo this clasico a this arrow
 */
+/*
+const perro = {
 
+    nombre: 'Beltz',
+    sonido: function() {
+
+        // Funcion dentro de función que necesitará this
+        function saludarPerro() {
+            console.log( this.nombre )  // This, aquí, NO es el objeto 'perro'
+        }
+        saludarPerro();
+
+    }
+
+}
+
+perro.sonido()  // UNDEFINED! Por qué?¿
+*/
+
+const perro = {
+
+    nombre: 'Beltz',
+    sonido: function() {
+
+        // Función Flecha, ahora, manejando el this local.
+        const saludarPerro = () => {
+            console.log( `Hey, ${this.nombre}` )  // This, aquí, SI refiere al  objeto 'perro'
+        }
+        saludarPerro();
+
+    }
+
+}
+
+perro.sonido() 

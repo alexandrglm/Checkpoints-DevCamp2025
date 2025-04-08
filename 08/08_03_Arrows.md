@@ -1,6 +1,7 @@
 # 08-03:    ¿Qué es una función flecha?
 
 Las funciones flecha (Arrow Functions) son una de las características de JS moderno.   
+
 Facilitan una sintáxis de función más concisa, y manejan de manera diferente los contextos `this` respecto a la expresión de funciones normal.
 ***
 
@@ -96,28 +97,54 @@ Una declaración o expresión de función tradicional creará su propio contexto
 
 A diferencia de las funciones tradicionales, el contexto `this` de las funciones flecha se hereda directamente del ámbito exterior al que pertencen (de las clases/constructores de los que provienen, etc).
 
-Es un poco complejo de explicar, por lo que el siguiente ejemplo contendrá la función flecha con su propio contexto this de variables declaradas a la (declaración) de función a la que pertenece. 
-
-Por motivos "históricos", se explicará cómo JS clásico manejaba los posibles errores con `this`, usando `.bind`, `apply`, etc.
 
 
 ```js
+const perro = {
 
-```
+    nombre: 'Beltz',
+    sonido: function() {
 
+        // Funcion dentro de función que necesitará this
+        function saludarPerro() {
+            console.log( `Hey, ${this.nombre}` )  // This, aquí, NO es el objeto 'perro'
+        }
+        saludarPerro();
 
-```js
+    }
 
-function Invoice(subTotal) {
-  this.taxRate = 0.06;
-  this.subTotal = subTotal;
-
-  this.total = setInterval(() => {
-    console.log((this.taxRate * this.subTotal) + this.subTotal);
-  }, 2000);
 }
 
-const inv = new Invoice(200);
-inv.total(); // Correct output after 2 seconds
+perro.sonido()  // (window) en browser // "UNDEFINED" en Node! ¿Por qué?
+
+```
+#### ¿Por qué no funciona?
+
+* `saludarPerro()` es una declaración de función típica, por lo que **su `this` está apuntando al objeto global, no al objeto `perro`.
+
+Por motivos "históricos", JS clásico manejaba los posibles errores usando los métodos `bind`, `call` `apply`, etc.
+
+En JS Moderno, usamos funciones flecha directamente para el correcto manejo.
+
+#### Transformando a Función Flecha, con un correcto manejo de `this`
+
+```js
+const perro = {
+
+    nombre: 'Beltz',
+    sonido: function() {
+
+        // Función Flecha, ahora, manejando el this local.
+        const saludarPerro = () => {
+            console.log( `Hey, ${this.nombre}` )  // This, aquí, SI refiere al  objeto 'perro'
+        }
+        saludarPerro();
+
+    }
+
+}
+
+perro.sonido() 
+
 ```
 
