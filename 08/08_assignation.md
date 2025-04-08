@@ -20,6 +20,16 @@ Necesito que esta documentación sea la más completa que has creado, utilizando
 
 * ¿Qué hacen async y await por nosotros?
 
+
+## 
+1. OOP
+2. CONST LET VAR
+3. BUCLES
+4. FUNCIONES FLECHA
+5. VAR DECONSTRUCTION
+6. SPREAD
+7. ASYNC/AWAIT - (8.) PROMESAS
+
 ## Coding Exercise
 
 1. Cree un bucle for en JS que imprima cada nombre en esta lista. miLista = “velma”, “exploradora”, “jane”, “john”, “harry”
