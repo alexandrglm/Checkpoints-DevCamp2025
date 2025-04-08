@@ -28,3 +28,28 @@ console.log(coche1);
 
 console.log(coche1.acelerar());
 console.log(coche1.frenar());
+
+/////////////////////
+class SumaResta {
+
+    // Método Estático
+    static suma(a, b) {
+        return a + b;
+    }
+
+
+    // Método de Instancia
+    resta(a, b) {
+        return a - b;
+    }
+
+}
+
+// Invocar al Método Estático
+console.log(SumaResta.suma(10, 20));
+
+
+// Invocación del Método de Instancia
+const nuevaResta = new SumaResta();
+
+console.log(nuevaResta.resta(20, 10));
