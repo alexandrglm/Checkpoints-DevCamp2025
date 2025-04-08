@@ -131,7 +131,7 @@ const perro = {
 
 perro.sonido()  // UNDEFINED! Por qué?¿
 */
-
+/*
 const perro = {
 
     nombre: 'Beltz',
@@ -148,3 +148,20 @@ const perro = {
 }
 
 perro.sonido() 
+*/
+/*
+
+const sinestesiaMusical = ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si'];
+
+
+// Nota la sintáxis que, en array de variables, no lleva comillas, no son String
+const [ Rojo, Verde, Blanco, Azul, Amarillo, Naranja, Morado] = sinestesiaMusical
+
+console.log(Rojo)
+console.log(Verde)
+console.log(Blanco)
+*/
+
+
+
+
