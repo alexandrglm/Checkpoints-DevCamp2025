@@ -211,7 +211,7 @@ function saludar(nombre, apellido)  {
 const usuarioUno = ['Alexandr', 'Gomez'];
 
 console.log(saludar(...usuarioUno));
-*/
+
 
 const usuarioDos = {
     nombre: 'Alexnadr',
@@ -223,3 +223,49 @@ const { nombre, ...restoDatos } = usuarioDos;
 
 console.log(nombre);            // Alexandr
 console.log(restoDatos);        // {apellido: 'Gomez', edad: '36'}
+*/
+ 
+
+/*
+Constructo Promise:
+
+Creamos una promesa, asignada a la constante nuevoToDo
+La promesa recibe una función con dos parámetros:
+1. Resolve, si todo sale OK
+2. Reject, si existe error
+*/
+
+const nuevoToDo = new Promise((resolve, reject) => {
+    
+    /*
+    Añadimos un temporizador, configurado a 2 segundos (2000ms)
+    */
+    setTimeout(() => {
+
+        /*
+        Hacemos una petición GET a la API de JsonPlaceHolder,
+        le pedimos un recurso concreto (/todos/1)
+        */
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+            // Este .then convierte la respuesta a lo que queremos (un JSON)
+            .then(response => response.json())
+            // La promesa, o se resuelve, o se rechaza por error
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    }, 2000);
+});
+
+
+console.log(nuevoToDo)
+
+
+nuevoToDo
+    .then((todo) => {
+        console.log(todo);
+        return todo;
+    })
+    .catch((error) => {
+        console.log('Error al obtener el JSON: ', error);
+    });
+    

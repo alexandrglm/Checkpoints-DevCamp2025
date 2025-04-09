@@ -1,4 +1,4 @@
-# 08-005:    ¿Qué hace el operador de extensión en JS?
+# 08-06:    ¿Qué hace el operador de extensión en JS?
 
 El Operador de Extensión (`...`) , relacionado con la decosntrucción de variables, permite hacer algo similar a esta, pero con arrays, elementos de arrays o propiedades de objetos, en nuevos objetos con múltiples elementos (arrays) o propiedadesd de objetos.
 
