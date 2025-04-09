@@ -273,46 +273,104 @@ console.log(restoDatos);        // {apellido: 'Gomez', edad: '36'}
 //     });
     
 
-/*
-1.
-*/
-const nuevoToDo = new Promise((resolve, reject) => {
+// /*
+// 1.
+// */
+// const nuevoToDo = new Promise((resolve, reject) => {
     
-    setTimeout(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(data => resolve(data))
-            .catch(error => reject(error))
-    }, 2000);
-});
+//     setTimeout(() => {
+//         fetch('https://jsonplaceholder.typicode.com/todos/1')
+//             .then(response => response.json())
+//             .then(data => resolve(data))
+//             .catch(error => reject(error))
+//     }, 2000);
+// });
 
 
-/*
-2. Creamos una segunda promesa con un timeout distinto.
-*/
-const nuevoToDos = new Promise((resolve, reject) => {
+// /*
+// 2. Creamos una segunda promesa con un timeout distinto.
+// */
+// const nuevoToDos = new Promise((resolve, reject) => {
     
-    setTimeout(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/2')
-            .then(response => response.json())
-            .then(data => resolve(data))
-            .catch(error => reject(error))
-    }, 2000);
-});
+//     setTimeout(() => {
+//         fetch('https://jsonplaceholder.typicode.com/todos/2')
+//             .then(response => response.json())
+//             .then(data => resolve(data))
+//             .catch(error => reject(error))
+//     }, 2000);
+// });
 
-/*
-3. Encapsulamos todas las promesas dispuestas a Promise.all
-*/
+// /*
+// 3. Encapsulamos todas las promesas dispuestas a Promise.all
+// */
 
-Promise.all([nuevoToDo, nuevoToDos])
-    .then(([toDo, toDos]) => {
+// Promise.all([nuevoToDo, nuevoToDos])
+//     .then(([toDo, toDos]) => {
         
-        console.log('JSON de la Primera promesa: ', toDo );
-        console.log('JSON de la Segunda promesa', toDos)
+//         console.log('JSON de la Primera promesa: ', toDo );
+//         console.log('JSON de la Segunda promesa', toDos)
 
-    })
-    .catch((error) => {
-        console.error('Error al obtener ambas promesas')
+//     })
+//     .catch((error) => {
+//         console.error('Error al obtener ambas promesas')
+//     }
+
+// )
+
+
+
+
+// async function getToDos() {
+//     const respuesta = fetch('https://jsonplaceholder.typicode.com/todos/1');
+//     const toDo = await respuesta.then(res => res.json());
+//     console.log(toDo);
+  
+//     const respuestaDos = fetch('https://jsonplaceholder.typicode.com/todos/');
+//     const toDos = await respuestaDos.then(res => res.json());
+//     console.log(toDos);
+// }
+  
+// getToDos();
+  
+
+/*
+async function getTodosEnParalelo() {
+    
+    const [todosUno, todosDos, todosTodos] = await Promise.all([
+
+        fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()),
+        fetch('https://jsonplaceholder.typicode.com/todos/2').then(res => res.json()),
+        fetch('https://jsonplaceholder.typicode.com/todos/').then(res => res.json())
+    ]);
+
+    console.log(todosUno);
+    console.log(todosDos);
+    console.log(todosTodos);
+
+}
+
+getTodosEnParalelo();
+*/
+
+
+async function getTodosEnParalelo() {
+    try {
+    const [todosUno, todosDos, todosTodos] = await Promise.all([
+
+        fetch('WEB INVALIDA').then(res => res.json()),
+        fetch('WEB INVALIDA').then(res => res.json()),
+        fetch('WEB INVALIDA').then(res => res.json())
+    ]);
+
+    console.log(todosUno);
+    console.log(todosDos);
+    console.log(todosTodos);
+
+
+    } catch (error) {
+        
+        console.log(error);
     }
+}
 
-)
+getTodosEnParalelo();

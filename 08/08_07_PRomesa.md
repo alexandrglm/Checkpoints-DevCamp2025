@@ -220,3 +220,89 @@ async function funcion(){
 ```
 ***
 
+## Casos de Uso
+### Comunicando con una API
+
+#### Una tarea
+```js
+async function getToDos() {
+ 
+    const respuestaDos = fetch('https://jsonplaceholder.typicode.com/todos/');
+    const toDos = await respuestaDos.then(res => res.json());
+    console.log(toDos);
+}
+  
+getToDos();
+```
+
+#### Varias tareas
+```js
+async function getToDos() {
+    
+    const respuesta = fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const toDo = await respuesta.then(res => res.json());
+    console.log(toDo);
+
+    const respuestaDos = fetch('https://jsonplaceholder.typicode.com/todos/2');
+    const toDoDos = await respuestaDos.then(res => res.json());
+    console.log(toDoDos);
+
+    const respuestaTres = fetch('https://jsonplaceholder.typicode.com/todos/');
+    const toDos = await respuestaTres.then(res => res.json());
+    console.log(toDos);
+}
+  
+getToDos();
+```
+
+#### Varias tareas con `Promise.all`
+```js
+async function getTodosEnParalelo() {
+    
+    const [todosUno, todosDos, todosTodos] = await Promise.all([
+
+        fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()),
+        fetch('https://jsonplaceholder.typicode.com/todos/2').then(res => res.json()),
+        fetch('https://jsonplaceholder.typicode.com/todos/').then(res => res.json())
+    ]);
+
+    console.log(todosUno);
+    console.log(todosDos);
+    console.log(todosTodos);
+
+}
+
+getTodosEnParalelo();
+```
+
+### Implementación de  `try` - `catch` para manejo de errores.
+Usando el mismo ejemplo anterior:
+
+```js
+async function getTodosEnParalelo() {
+    try {
+    const [todosUno, todosDos, todosTodos] = await Promise.all([
+
+        fetch('WEB INVALIDA').then(res => res.json()),
+        fetch('WEB INVALIDA').then(res => res.json()),
+        fetch('WEB INVALIDA').then(res => res.json())
+    ]);
+
+    console.log(todosUno);
+    console.log(todosDos);
+    console.log(todosTodos);
+
+
+    } catch (error) {
+        
+        console.log(error);
+    }
+}
+
+getTodosEnParalelo();
+```
+
+Como respuesta, a este error provocado con URI inválida, tenemos esta información en consola:
+![Respuesta de catch error](./08-08_IMG3.png)
+
+***
