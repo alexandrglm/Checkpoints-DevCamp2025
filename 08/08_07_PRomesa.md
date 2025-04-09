@@ -1,5 +1,7 @@
 # 08-07:    ¿Qué es una promesa?
-
+# 08-08:    ¿Qué hace Asyns-Await por nosotros?
+***
+# Promesas
 Una promesa, en JavaScript, es el objeto que conecta procesos de manera asíncrona, es decir, pudiendo postergar la respuesta de una función sin que la otra parte que la espera se detenga o bloquee el sistema. Este garantiza que, en un momento posterior, obtendrás un resultado, indistintamente del tiempo necesario para dicha tarea.
 
 Es, algo así, como tener varios hilos de ejecución posibles.
@@ -177,5 +179,44 @@ Promise.all([nuevoToDo, nuevoToDos])
 )
 ```
 ***
+# `async` / `await`
 
-Las promesas son la base para `Async/Await`, y esto lo vamos a desgranar en la siguiente página, 08-08_Async/Await.
+Las promesas son la base para `Async/Await`, y es lo que vamos desgranar ahora.
+
+Async-Await es una sintáxis especial en JavaScript, ligada a eventos asíncronos y es, necesariamente, compatible con cualquier API basada en promesas.
+
+Como se ha explicado antes, antes de Async-Await lo que había era un "infierno de invocaciones".
+De este modo, el código asíncrono se hace realmente flexible, legible y mejor mantenido/escalable.
+
+El manejo de errores mejora, y nos encontramos con `try:` y `catch:`, que harán nuestro uso de eventos asíncronos y manejo de errores realmente cómodo 
+
+#### Promesas VS Async / Await
+|                   | Async/Await             | Promesas (.then())               |
+| ----------------- | ----------------------- | -------------------------------- |
+| Legibilidad       | *Código lineal y claro* | *Cadenas de `.then()` anidadas*  |
+| Manejo de errores | *Usa `try`/ `catch`*    | *Usa `.catch()`*                 |
+| Depuración        | *Más intuitiva*         | *Más compleja en cadenas largas* |
+
+***
+
+### Sintáxis y uso básico
+
+1. Declaración de función asíncrona con `async`
+**Cualquier funcuión asíncrona debe marcarse con `async`**.
+```js
+async function funcion(){
+    ...
+}
+```
+
+2. Pausa hasta obtener resultado con`await`.
+```js
+async function funcion(){
+    
+    const respuesta = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const json = await respuesta.json()
+    ....
+}
+```
+***
+
