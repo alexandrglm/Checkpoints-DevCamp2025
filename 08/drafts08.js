@@ -390,3 +390,103 @@ getTodosEnParalelo();
 */
 
 
+// // Correcciones, mejoras
+
+// // oop herencia ejemplo
+// class Coche {
+//     constructor(marca, modelo) {
+
+//         // Estos objetos son las propiedades heredadas
+//         this.marca = marca;
+//         this.modelo = modelo,
+//     }
+// }
+
+
+
+// // oop polimorfismo herencia
+// class CocheBasico {
+//     constructor(marca, modelo) {
+//         // Estos objetos son las propiedades heredadas
+//         this.marca = marca;
+//         this.modelo = modelo;
+//     }
+
+//     anuncio() {
+//         console.log(`El coche ${this.marca} ${this.modelo} es un coche básico, no tiene extras`)
+//     }
+// }
+
+// // Extendemos la clase con `extends`y el método `super()`
+// class CocheExtras extends CocheBasico{
+//     constructor(marca, modelo, extras) {
+        
+//         // Recogemos los marca modelo ya definidos en la clase inicial
+//         super(marca, modelo);
+//         this.extras = extras;
+//     }
+
+//     anuncio() {
+//         console.log(`El coche ${this.marca} ${this.modelo} es un coche mejorado que añade ${this.extras}`)
+//     }
+// }
+
+// /*
+// EL POLIMORFISMO OCURRE AQUÍ
+
+// El método `anuncio()` se comporta de manera diferente según la clase a la que refiera.
+// Esto es polimorfimo
+// */
+
+// const cocheUno = new CocheBasico('Ford', 'Fiesta');
+// const cocheDos = new CocheExtras('Lamborghini', 'Diablo', 'Carrocería en oro')
+
+
+// cocheUno.anuncio()
+// cocheDos.anuncio()
+
+
+// oop abstracción ejemplo
+class Coche {
+    constructor(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    // Método abstracto, que deberá ser implementado en cada clase hija
+    anuncio() {
+        return null
+    }
+}
+
+
+class CocheBasico extends Coche{
+    constructor(marca, modelo) {
+       super(marca, modelo)
+    }
+
+    // El método, en esta clase extendida, se desarrolla de una forma
+    anuncio() {
+        console.log(`El coche ${this.marca} ${this.modelo} es un coche básico, no tiene extras`)
+    }
+}
+
+
+class CocheExtras extends Coche{
+    constructor(marca, modelo, extras) {
+        super(marca, modelo);
+        this.extras = extras;
+    }
+
+    // El método, en esta otra clase extendida, se desarrolla de otra forma
+    anuncio() {
+        console.log(`El coche ${this.marca} ${this.modelo} es un coche mejorado que añade ${this.extras}`)
+    }
+}
+
+const cocheUno = new CocheBasico('Ford', 'Fiesta');
+const cocheDos = new CocheExtras('Lamborghini', 'Diablo', 'Carrocería en oro')
+
+
+cocheUno.anuncio()
+cocheDos.anuncio()
