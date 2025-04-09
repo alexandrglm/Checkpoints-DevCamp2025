@@ -352,7 +352,7 @@ async function getTodosEnParalelo() {
 getTodosEnParalelo();
 */
 
-
+/*
 async function getTodosEnParalelo() {
     try {
     const [todosUno, todosDos, todosTodos] = await Promise.all([
@@ -374,3 +374,19 @@ async function getTodosEnParalelo() {
 }
 
 getTodosEnParalelo();
+*/
+
+
+/*
+# 08-03  ¿Qué tipo de bucles hay en JS?
+
+* `for`
+* `for...in`
+* Método `forEach()`
+
+* `while`
+* `do ... while`
+
+*/
+
+
