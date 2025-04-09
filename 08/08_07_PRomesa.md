@@ -22,7 +22,7 @@ Una promesa puede tener tres estados:
 
 ***
 ## Definiendo una Promesa (constructor `Promise`)
-### Sintáxis de una promesa
+### Sintáxis de una promesa y manejo de resultados
 ```js
 
 /*
@@ -63,8 +63,8 @@ los datos recibidos
 console.log(nuevoToDo)
 
 /*
-
-
+A través de constructores .then y .cathc es como se manejarán los datos
+o posibles errores.
 */
 
 nuevoToDo
@@ -77,9 +77,72 @@ nuevoToDo
     });
     
 
-/* El resultado obtenido es, efectivamente, el JSON:
+/* El resultado obtenido es, efectivamente, el JSON solicitado:
 
 {userId: 1, id: 1, title: 'delectus aut autem', completed: false}
 */
 ```
+***
+### Casos de Uso
+#### Llamadas a API's
+```js
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(data => resolve(data))
+    .catch(error => reject(error))
 
+```
+
+#### Operaciones en paralelo usando `Promise.all`
+Las capacidades multi-hilo de `Promise.all` suponen un concepto muy interesante.
+Con este, después de asignar distintas peticiones GET a distintos recursos, con un tiempo de ejecución distinto, agrupamos su petición `.then - .catch` en un solo bloque.
+
+
+```js
+/*
+1.
+*/
+const nuevoToDo = new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    }, 2000);
+});
+
+
+/*
+2. Creamos una segunda promesa con un timeout distinto.
+*/
+const nuevoToDos = new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/2')
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    }, 2000);
+});
+
+/*
+3. Encapsulamos todas las promesas dispuestas a Promise.all
+*/
+
+Promise.all([nuevoToDo, nuevoToDos])
+    .then(([toDo, toDos]) => {
+        
+        console.log('JSON de la Primera promesa: ', toDo );
+        console.log('JSON de la Segunda promesa', toDos)
+
+    })
+    .catch((error) => {
+        console.error('Error al obtener ambas promesas')
+    }
+
+)
+```
+***
+
+Las promesas son la base para `Async/Await`, y esto lo vamos a desgranar en la siguiente página, 08-08_Async/Await.

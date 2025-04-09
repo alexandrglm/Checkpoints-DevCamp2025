@@ -226,46 +226,93 @@ console.log(restoDatos);        // {apellido: 'Gomez', edad: '36'}
 */
  
 
+
+
+
+// /*
+// Constructo Promise:
+
+// Creamos una promesa, asignada a la constante nuevoToDo
+// La promesa recibe una función con dos parámetros:
+// 1. Resolve, si todo sale OK
+// 2. Reject, si existe error
+// */
+
+// const nuevoToDo = new Promise((resolve, reject) => {
+    
+//     /*
+//     Añadimos un temporizador, configurado a 2 segundos (2000ms)
+//     */
+//     setTimeout(() => {
+
+//         /*
+//         Hacemos una petición GET a la API de JsonPlaceHolder,
+//         le pedimos un recurso concreto (/todos/1)
+//         */
+//         fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+//             // Este .then convierte la respuesta a lo que queremos (un JSON)
+//             .then(response => response.json())
+//             // La promesa, o se resuelve, o se rechaza por error
+//             .then(data => resolve(data))
+//             .catch(error => reject(error))
+//     }, 2000);
+// });
+
+
+// console.log(nuevoToDo)
+
+
+// nuevoToDo
+//     .then((todo) => {
+//         console.log(todo);
+//         return todo;
+//     })
+//     .catch((error) => {
+//         console.log('Error al obtener el JSON: ', error);
+//     });
+    
+
 /*
-Constructo Promise:
-
-Creamos una promesa, asignada a la constante nuevoToDo
-La promesa recibe una función con dos parámetros:
-1. Resolve, si todo sale OK
-2. Reject, si existe error
+1.
 */
-
 const nuevoToDo = new Promise((resolve, reject) => {
     
-    /*
-    Añadimos un temporizador, configurado a 2 segundos (2000ms)
-    */
     setTimeout(() => {
-
-        /*
-        Hacemos una petición GET a la API de JsonPlaceHolder,
-        le pedimos un recurso concreto (/todos/1)
-        */
         fetch('https://jsonplaceholder.typicode.com/todos/1')
-
-            // Este .then convierte la respuesta a lo que queremos (un JSON)
             .then(response => response.json())
-            // La promesa, o se resuelve, o se rechaza por error
             .then(data => resolve(data))
             .catch(error => reject(error))
     }, 2000);
 });
 
 
-console.log(nuevoToDo)
+/*
+2. Creamos una segunda promesa con un timeout distinto.
+*/
+const nuevoToDos = new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/2')
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+    }, 2000);
+});
 
+/*
+3. Encapsulamos todas las promesas dispuestas a Promise.all
+*/
 
-nuevoToDo
-    .then((todo) => {
-        console.log(todo);
-        return todo;
+Promise.all([nuevoToDo, nuevoToDos])
+    .then(([toDo, toDos]) => {
+        
+        console.log('JSON de la Primera promesa: ', toDo );
+        console.log('JSON de la Segunda promesa', toDos)
+
     })
     .catch((error) => {
-        console.log('Error al obtener el JSON: ', error);
-    });
-    
+        console.error('Error al obtener ambas promesas')
+    }
+
+)
