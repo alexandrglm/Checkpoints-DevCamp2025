@@ -337,7 +337,7 @@ function waitress() {
         
                 try {
         
-                    const input = prompt(`Elija su  ${tipoPlato.toLowerCase()}:\n\n${
+                    const input = prompt(`Elija su  ${tipoPlato}:\n\n${
                         opciones.map(opcion => `-> ${opcion.nombre}    - ${opcion.precio.toFixed(2)}€`).join('\n')
                     }`);
 
