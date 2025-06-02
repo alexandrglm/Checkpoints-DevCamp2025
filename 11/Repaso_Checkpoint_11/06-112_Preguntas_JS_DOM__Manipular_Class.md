@@ -1,4 +1,6 @@
+# Module 06 - 112: DOM Fundamentals
 
+## Adding/Removing Classes in Vanilla JS
 
 1. ### ¿Cuál es la diferencia entre `classList.add()` y `className`?
 
