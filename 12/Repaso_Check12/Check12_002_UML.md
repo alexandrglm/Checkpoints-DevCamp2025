@@ -101,7 +101,7 @@ Símplemente irán englobados en un "rectángulo con la pestaña superior derech
 
 No sustituyen las conversaciones con el resto de elementos de un equipo pero son una herramienta fundamental para las explicaciones, contexto, extendiendo lo que los estereotipos hacen.
 
-### 06-157 - DEPENDENCIES (Dependencias)
+### 06-156 - DEPENDENCIES (Dependencias)
 
 Reprensetan la forma más esencial de interacción entre un elemento UML y otro.
 
@@ -118,7 +118,7 @@ Representamos las dependencias con lineas (o flechas) discontinuas `-  A -----> 
 
 
 
-### 06-158 - FEATURES/PROPERTIES (Caractetísticas/Propiedades)
+### 06-157 - FEATURES/PROPERTIES (Caractetísticas/Propiedades)
 
 - Bloques de construcción fundamentales, componentes "universales" de un elemento en UML.
 
@@ -128,11 +128,81 @@ Representamos las dependencias con lineas (o flechas) discontinuas `-  A -----> 
 
 
 ---
+---
 
 ## UML 1 - DIAGRAMAS
 
-### 06-160 - Diagramas
+### 06-160 - Diagramas intro
+
+Por lo general, todos los tipos de diagramas en UML responden a **DOS** categorías fundamentales:
+
+- #### Diagramas `ESTRUCTURALES` (Structural)
+    * Modelan cómo el sistema debe ser definido, construido
+    * El estructural más utilizado, los **diagramas de clases**
+
+- #### Diagramas de `COMPORTAMIENTO` (Behavioural)
+    * No definen la construcción del sistema, sino cómo el sistema actúa, de qué recursos/permisos/interacciones dispone, cómo debe responder ante X evento.
+
+---
+
 ### 06-161 - Estructurales (Structurals)
+
+Por lo general, los principales diagramas UML que permitan estructurar y definir el propio sistema,son:
+
+- Clases
+- Despliegue (Deployment)
+- Paquete (Package)
+
+
+#### Diagrama de Clases
+
+Ofrecen una representación visual exacta de las clases necesarias en un programa:
+
+- Su especificación (Nombre)
+- Sus atributos (lo que la clase "tiene"/puede ofrecer)
+- Sus métodos/operaciones (lo que "puede hacer)
+
+- Sus relaciones/dependencias, es decir, las **asociaciones** que tiene,  en base a su **multiplicidad** (a cómo/cúantas relaciones tiene con otros elementos), su **navegabilidad** (el tipo y sentido estrictamente direccional de sus asociaciones), o el **rol** que abarcan estas (los atributos o métodos compartidos entre dependencias) y su **visibilidad**, es decir si estos son públicos, privados, protegidos, globales a nivel de paquete, ...
+
+
+##### Sintaxis de una clase
+```
+NOMBRE
+<<ESTEREOTIPO (si lo hay)>>
+```
+```
+ATRIBUTOS:
+
+"+/-/#/~ VISIBILIDAD" "NOMBRE ATRIBUTO : "TIPO" [MULTIPLICIDAD]
+
+```
+```
+MÉTODOS/OPERACIONES:
+
+"+/-/#/~ VISIBILIDAD" "NOMBRE MÉTODO"(PARAMENTROS): "RETORNO"
+```
+```
+Topic
+-----------------
++ title : String
++ slug : String
++ createdAt : DateTime
++ updatedAt : DateTime
+-----------------
++ topTen() : List<Topic>
+- calculateRanking() : Integer
+```
+
+
+#### Diagramas de Despliegue
+
+
+#### Diagramas de Paquete
+
+
+
+---
+
 ### 06-162 - De Comportamiento (Behaviourals)
 
 
@@ -148,4 +218,3 @@ Representamos las dependencias con lineas (o flechas) discontinuas `-  A -----> 
 
 ### 06-168 - Diagrama de Actividades -> ELEMENTOS
 ### 06-169 - Diagrama de Actividades -> Ejemplo Grading System
-
