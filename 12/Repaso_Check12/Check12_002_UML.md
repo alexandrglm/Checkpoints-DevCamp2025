@@ -1,42 +1,7 @@
+
 ## UML 1 - FUNDAMENTOS
 
-### 06-150 - ¿Qué es UML?
-
-### 06-151 - Fases en las que UML es utilizado
-
-### 06-152 - COMPONENTES COMUNES
-### 06-153 - FRAMES (Marcos)
-
-### 06-154 - CLASSIFIERS (Clasificadores)
-
-### 06-155 - STEREOTYPES (Estereotipos)
-### 06-156 - COMMENTS/NOTES (Comentarios)
-### 06-157 - DEPENDENCIES (Dependencias)
-### 06-158 - FEATURES/PROPERTIES (Caractetísticas/Propiedades)
-
-
-
-## UML 1 - DIAGRAMAS
-
-### 06-160 - Diagramas
-### 06-161 - Estructurales (Structurals)
-### 06-162 - De Comportamiento (Behaviourals)
-
-
-### CLASS DIAGRAMS
-
-### 06-164 - Diagrama de Clases -> ELEMENTOS
-### 06-165 - Propiedades de atributos en Diagrama de Clases -> ASOCIACION -> MULTIPLICIDAD - NAVEGABILIDAD - ROL
-
-### 06-166 - Diagrama de Clases -> Ejemplo Twitter
-
-
-### ACTIVITY DIAGRAMS
-
-### 06-168 - Diagrama de Actividades -> ELEMENTOS
-### 06-169 - Diagrama de Actividades -> Ejemplo Grading System
-
----
+--- 
 
 ### 06-150 - ¿Qué es UML?
 
@@ -54,8 +19,8 @@ U.M.L. - Unified Modeling Language:
 4. Organización y Calidad de sistemas complejos en componentes visuales
 5. Eficiencia, gracias a una mejor planificación
 
-
 ---
+
 ### 06-151 - Fases en las que UML es utilizado
 
 Visto de manera general, definimos TRES fases:
@@ -94,7 +59,7 @@ Fase para crear toda la documentación que facilite el uso de nuestro software.
 
 ### 06-152 - COMPONENTES COMUNES
 
-Son SEIS los grandes componentes comunes entre los distintos tipos de diagramas:
+Son **SEIS** los grandes componentes comunes entre los distintos tipos de diagramas:
 
 1. FRAMES (marcos)
 2. CLASSIFIERS (clasificadores)
@@ -103,41 +68,84 @@ Son SEIS los grandes componentes comunes entre los distintos tipos de diagramas:
 5. DEPENDENCIAS (dependencies)
 6. FEATURES/PROPERTIES (características/propiedades)
 
----
 
 
 ### 06-153 - FRAMES (Marcos)
 
-
+- Organizan y contienen los elementos de un diagrama.
+- Aportan el contexto y delimitan el alcnace de lo que se está modelando.
 
 ### 06-154 - CLASSIFIERS (Clasificadores)
-### 06-155 - COMMENTS/NOTES (Comentarios)
-### 06-156 - DEPENDENCIES (Dependencias)
-### 06-157 - FEATURES/PROPERTIES (Caractetísticas/Propiedades)
+
+- Principal función: Clasificarlo todo.
+
+- No son una referencia directa de modelado a código, sino que clasifican conceptos abstractos.
 
 
+### 06-165 - STEREOTYPES (Estereotipos)
+
+- Son un elemento/mecanismo que permiten extender las explicaciones contextuales sobre cualquier elemento de un daiagrama.
+
+- Extienden las metaclases. Metaclases son "las clases de las clases".
+
+- A diferencia de los Comentarios/Notas, éstos sí están reglados/definidos en UML:
+
+    - Sintaxis con `<<` `Explicación` `>>`
+    - Semántica breve, directa y técnica, que aporta contexto de un vistazo.
+
+### 06-156 - COMMENTS/NOTES (Comentarios)
+
+Así cómo los los estereotipos aportan información contextual, los comentarios hacen lo propio, pero sin tener una forma estandarizada para hacerlo.
+
+Símplemente irán englobados en un "rectángulo con la pestaña superior derecha doblada" (como un post-it), unido a flecha discontinua `- - - - ->` hacia el elemento al que desea aportar contexto.
+
+No sustituyen las conversaciones con el resto de elementos de un equipo pero son una herramienta fundamental para las explicaciones, contexto, extendiendo lo que los estereotipos hacen.
+
+### 06-157 - DEPENDENCIES (Dependencias)
+
+Reprensetan la forma más esencial de interacción entre un elemento UML y otro.
+
+La base de las dependencias reside en el **emparejamiento** (coupling), el cuál implica cuánto un componente necesita de otro para su correcto funcionamiento.
+
+Los cambios que afecten al elemento dependiente también afectarán al componente del que se depende.
+
+Representamos las dependencias con lineas (o flechas) discontinuas `-  A -----> B`  
+
+- Lineas: Discontinuas
+- Flecha: Triangulo **ABIERTO**
+- Dirección: Del componente dependiente (A), al componente del que se depende (B)
+- Etiquetado: Opcional, nombre o `<<estereotipo >>`.
+
+
+
+### 06-158 - FEATURES/PROPERTIES (Caractetísticas/Propiedades)
+
+- Bloques de construcción fundamentales, componentes "universales" de un elemento en UML.
+
+-  Definen lo que un elemento "tiene" (propiedades, atributos), y lo que un elemento "puede hacer" (operaciones-métodos, comportamiento).
+
+- Por convención, y por la propia finalidad de UML, se utilizará una semántica clara, directa, auto-definitoria.
+
+
+---
 
 ## UML 1 - DIAGRAMAS
 
-### 06-159 - Diagramas
-### 06-160 - Estructurales (Structurals)
-### 06-161 - De Comportamiento (Behaviourals)
+### 06-160 - Diagramas
+### 06-161 - Estructurales (Structurals)
+### 06-162 - De Comportamiento (Behaviourals)
 
 
 ### CLASS DIAGRAMS
 
-### 06-163 - Diagrama de Clases -> ELEMENTOS
-### 06-164 - Propiedades de atributos en Diagrama de Clases -> ASOCIACION -> MULTIPLICIDAD - NAVEGABILIDAD - ROL
+### 06-164 - Diagrama de Clases -> ELEMENTOS
+### 06-165 - Propiedades de atributos en Diagrama de Clases -> ASOCIACION -> MULTIPLICIDAD - NAVEGABILIDAD - ROL
 
-### 06-165 - Diagrama de Clases -> Ejemplo Twitter
+### 06-166 - Diagrama de Clases -> Ejemplo Twitter
 
 
 ### ACTIVITY DIAGRAMS
 
-### 06-167 - Diagrama de Actividades -> ELEMENTOS
-### 06-168 - Diagrama de Actividades -> Ejemplo Grading System
-
-
-
-
+### 06-168 - Diagrama de Actividades -> ELEMENTOS
+### 06-169 - Diagrama de Actividades -> Ejemplo Grading System
 
