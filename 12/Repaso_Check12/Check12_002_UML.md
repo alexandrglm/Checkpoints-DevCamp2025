@@ -196,6 +196,58 @@ Topic
 
 #### Diagramas de Despliegue
 
+Modelan el despliegue de los distintos componentes de software/hardware respecto a nuestro programa, definiendo cómo debe ser configurada toda la arquitectura.
+
+Están formados por **SEIS** elementos comunes:
+
+*   ##### NODOS (Nodes)
+Sistemas fisicos o virtuales, pero independientes, donde los distintos componentes son desplegados.  
+
+
+* ##### COMPONENTES (Components)
+Módulos de software/de aplicaciones; por componentes.
+
+
+* ##### Artefactos/Blobs (Artifacts)
+"Piezas" de información concreta usada o creada.
+
+Por ejemplo, una "ficha de cliente", un objeto, de su propia clase,  sería un Artefactos. La ficha es "creada" en base a parámetros de su clase, y es utilizada por otros elementos. (No es la mejor explicación porque puede inducir a error respecto a los diagramas de clases, pero es útil).
+
+
+* ##### RUTAS/NEXOS/ENLACES (Links)
+Conexiones-relaciones entre los nodos.
+
+
+* ##### DEPENDENCIAS (Dependencies)
+* ##### ASOCIACIONES (ASSOCIATIONS)
+
+
+
+A grandes rasgos, en la industria, definimos la implementación estilo CI/CD (Integración Continua/Desarrollo Continuo - Continuous Integration/Continous Development) usando Diagramas de Despliegue.
+
+![IMG](https://s3-us-west-2.amazonaws.com/devcamp-pictures/UML+images/Screen+Shot+2017-10-12+at+2.41.43+PM.png)
+
+Una CI/CD típica ofrecerá:
+
+1. ##### Un servidor CI principal
+Donde desarrollamos la aplicaicón, donde ubicamos todo el control de versiones.
+
+2. ##### Tres componentes/entornos separados
+    * ###### 2.1 STAGING
+    Entorno de desarrollo y testeo.
+
+    * ###### 2.2 PRE-PRODUCTION
+    Entorno de testeo profundo.
+
+
+    * ###### 2.3 PRODUCTION
+    Servidor/entorno final, donde reside nuestra aplicación, en producción.
+
+
+Este sistema ampliamente utilizado en la industria ofrece ventajas signitificativas (Nunca podrías pasar a producción una versión de la aplicación que pudiera contener errores y compromenter el sistema.)
+
+
+
 
 #### Diagramas de Paquete
 
@@ -218,3 +270,4 @@ Topic
 
 ### 06-168 - Diagrama de Actividades -> ELEMENTOS
 ### 06-169 - Diagrama de Actividades -> Ejemplo Grading System
+
